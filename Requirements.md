@@ -24,19 +24,20 @@
 
 ### Project Structure
 
-├── glubr
-│    ├── controllers/
-│    ├── config/   
-│    ├── models/
-|    ├── middlewares/
-│    ├── routes/
-│    ├── services/
-|    ├── utils/
-|    ├── app.js
-|    ├── db/
-|    ├── .gitignore
-|    ├── .env
-├    ├── package.json
+| glubr |
+| ----------- |
+│    ├── controllers/ |
+│    ├── config/ |
+│    ├── models/ |
+|    ├── middlewares/ |
+│    ├── routes/ |
+│    ├── services/ |
+|    ├── utils/ |
+|    ├── app.js |
+|    ├── db/ |
+|    ├── .gitignore |
+|    ├── .env |
+├    ├── package.json |
 
 ### Features
 
