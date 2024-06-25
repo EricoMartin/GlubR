@@ -1,5 +1,6 @@
 # Project Requirements
- -------------------------------------------------------------
+
+---
 
 ### User stories
 
@@ -25,6 +26,7 @@
 ### Models
 
 ###### Users
+
 - id
 - username
 - email
@@ -52,26 +54,27 @@
 
 ### Project Structure
 
-| glubr |
-| ----------- |
-│ controllers/ |
-│ config/ |
-│ models/ |
-| middlewares/ |
-│ routes/ |
-│ services/ |
-| utils/ |
-| app.js |
-| db/ |
-| .gitignore |
-| .env |
-| package.json |
+| glubr          |
+| -------------- |
+| │ controllers/ |
+| │ config/      |
+| │ models/      |
+| middlewares/   |
+| │ routes/      |
+| │ services/    |
+| utils/         |
+| app.js         |
+| db/            |
+| .gitignore     |
+| .env           |
+| package.json   |
 
 ### Features
 
 #### Authentication
 
 ##### Signup
+
 - Get user input
 - Validate user input
 - Check if user record does not exist in the system already.
@@ -79,6 +82,7 @@
 - Save user data in the database.
 
 ##### login
+
 - Get user input
 - Validate user input
 - Check if user has an account in the system
@@ -87,16 +91,19 @@
 - Return response
 
 #### Create Post
+
 - Validate user (check if they are still logged in).
 - Validate post title to know if nobody has posted the exact same post before.
 - Check if user has entered the required data.
 - Save post in the database
 
 #### Read Post
+
 - Match post Id extracted from query parameter with the post id's in the database to check for its existence.
 - If its exists, return the post. Else, return an error.
 
 #### Comment on post
+
 - Check if user id is valid
 - Check if Post id is valid
 - Check if comment's content is not empty
@@ -104,7 +111,9 @@
 
 ### Endpoints
 
-| Feature | Route | Http Method |
-| ----------- | ----------- | ----------- |
-| Signup| /auth/signup | POST |
-| Login| /auth/login | POST |
+| Feature | Route        | Http Method |
+| ------- | ------------ | ----------- |
+| Signup  | /auth/signup | POST        |
+| Login   | /auth/login  | POST        |
+
+- Track project: [https://tinyurl.com/yc6senzx](https://tinyurl.com/yc6senzx)
