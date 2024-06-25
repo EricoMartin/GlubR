@@ -18,9 +18,37 @@
 ### Technologies
 
 - **Backend**: Node.js, Express, MongoDB, Mongoose, JWT, bcrypt.
-- **Testing**: Mocha, Supertest.
+- **Testing**: Mocha, Supertest and Thunder client.
 - **Deployment**: Docker, AWS.
 - **CI/CD**: GitHub Actions.
+
+### Models
+
+###### Users
+- id
+- username
+- email
+- password
+- profession
+- gender
+- firstname
+- lastname
+
+###### Posts
+
+- id
+- title
+- content
+- comments
+- description
+- authorId
+
+###### Comments
+
+- id
+- authorId
+- content
+- postId
 
 ### Project Structure
 
