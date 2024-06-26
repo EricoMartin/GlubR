@@ -4,23 +4,38 @@ import User from "../models/user";
 class AuthController {
   static async createUser(req, res, next) {
     try {
-      const { username, email, password, firstname, lastname } = req.body;
-      const invalidData = (prop, data) =>
-        prop.find((idx) => data[idx] === "undefined" || data[idx] == "");
-      const details = [username, email, password, firstname, lastname];
+      const { username, email, password, profession, firstname, lastname } =
+        req.body;
 
-      if (invalidData(details, req.body)) {
+      const details = [
+        username,
+        email,
+        password,
+        profession,
+        firstname,
+        lastname,
+      ];
+
+      const invalidData =
+        !username ||
+        !email ||
+        !password ||
+        !profession ||
+        !firstname ||
+        !lastname;
+
+      if (invalidData) {
         return res.status(400).json({
           status: 400,
           message:
-            "Fill all required fields: [username, email, password, firstname, lastname]",
+            "Fill all required fields: [username, email, password, profession, firstname, lastname]",
         });
       }
       if (
-        req.body.password.length < 8 ||
-        req.body.email.length >= 30 ||
-        req.body.firstname.length >= 30 ||
-        req.body.lastname.length >= 30
+        password.length < 8 ||
+        email.length >= 30 ||
+        firstname.length >= 30 ||
+        lastname.length >= 30
       ) {
         return res.status(400).json({
           status: 400,

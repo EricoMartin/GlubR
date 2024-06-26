@@ -1,5 +1,4 @@
 import express from "express";
-import process from "node:process";
 const CONFIG = require("./config/config");
 const dbConnection = require("./db/connection");
 const authRoute = require("./routes/auth");
