@@ -115,5 +115,6 @@
 | ------- | ---------------- | ----------- |
 | Signup  | /api/auth/signup | POST        |
 | Login   | /api/auth/login  | POST        |
+| Logout  | /api/auth/logout | POST        |
 
 - Track project: [https://tinyurl.com/yc6senzx](https://tinyurl.com/yc6senzx)
