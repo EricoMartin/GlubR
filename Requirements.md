@@ -4,8 +4,8 @@
 
 ### User stories
 
-- [ ] user can sign up
-- [ ] user can login
+- [x] user can sign up
+- [x] user can login
 - [ ] user can post a blog
 - [ ] user can view a post
 - [ ] user can view all posts
@@ -14,7 +14,7 @@
 - [ ] user can comment on a post
 - [ ] user can like a post
 - [ ] user can like a comment
-- [ ] user can sign out
+- [x] user can sign out
 
 ### Technologies
 
