@@ -1,6 +1,6 @@
 import mongoose from "mongoose";
 import process from "node:process";
-const CONFIG = require("./../config/config");
+import CONFIG from "./../config/config";
 
 const dbConnection = async () => {
   try {

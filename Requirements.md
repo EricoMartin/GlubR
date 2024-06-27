@@ -111,9 +111,9 @@
 
 ### Endpoints
 
-| Feature | Route        | Http Method |
-| ------- | ------------ | ----------- |
-| Signup  | /auth/signup | POST        |
-| Login   | /auth/login  | POST        |
+| Feature | Route            | Http Method |
+| ------- | ---------------- | ----------- |
+| Signup  | /api/auth/signup | POST        |
+| Login   | /api/auth/login  | POST        |
 
 - Track project: [https://tinyurl.com/yc6senzx](https://tinyurl.com/yc6senzx)

@@ -114,6 +114,14 @@ class AuthController {
       data,
     });
   }
+
+  static logout(req, res) {
+    delete req.headers.authorization;
+    return res.status(200).send({
+      status: 200,
+      message: "You have been logged out successfully",
+    });
+  }
 }
 
 module.exports = AuthController;
