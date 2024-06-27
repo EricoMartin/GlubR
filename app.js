@@ -1,7 +1,7 @@
 import express from "express";
-const CONFIG = require("./config/config");
-const dbConnection = require("./db/connection");
-const authRoute = require("./routes/auth");
+import CONFIG from "./config/config";
+import dbConnection from "./db/connection";
+import authRoute from "./routes/auth";
 
 const port = parseInt(CONFIG.PORT, 10) || 3000;
 
