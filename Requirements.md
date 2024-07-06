@@ -6,11 +6,11 @@
 
 - [x] user can sign up
 - [x] user can login
-- [ ] user can post a blog
-- [ ] user can view a post
-- [ ] user can view all posts
-- [ ] user can edit a post
-- [ ] user can delete a post
+- [x] user can post a blog
+- [x] user can view a post
+- [x] user can view all posts
+- [x] user can edit a post
+- [x] user can delete a post
 - [ ] user can comment on a post
 - [ ] user can like a post
 - [ ] user can like a comment
