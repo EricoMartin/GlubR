@@ -27,7 +27,7 @@ class GlubController {
         dislikes: 0,
       });
       const data = await glub.save();
-      res.status(200).send(data);
+      res.status(201).send(data);
     } catch (err) {
       throw new Error(err);
     }
@@ -58,6 +58,27 @@ class GlubController {
               },
             ],
             as: "author",
+          },
+        },
+        {
+          $lookup: {
+            from: "comments",
+            localField: "_id",
+            foreignField: "glub",
+            as: "comments",
+          },
+        },
+        {
+          $project: {
+            title: 1,
+            body: 1,
+            author: 1,
+            comments: {
+              _id: 1,
+              body: 1,
+            },
+            likes: 1,
+            dislikes: 1,
           },
         },
       ]);

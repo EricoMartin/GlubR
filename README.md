@@ -16,6 +16,7 @@
 | ReadAll | /api/glub/        | GET         |
 | Update  | /api/glub/:glubId | PUT         |
 | Delete  | /api/glub/:glubId | DELETE      |
+| Comment | /api/comment/     | POST        |
 
 ### User stories
 
@@ -26,7 +27,7 @@
 - [x] user can view all posts
 - [x] user can edit a post
 - [x] user can delete a post
-- [ ] user can comment on a post
+- [x] user can comment on a post
 - [ ] user can like a post
 - [ ] user can like a comment
 - [x] user can sign out
@@ -34,6 +35,7 @@
 ## Setting up locally
 
 - Clone this repository to your local machine
+- You need to have Node and Express installed
 - Create an account on MongoDB Atlas or install MongoDB locally
 - Create `.env` file.
 - Use the format in `.env-sample` file to configure the API
@@ -41,4 +43,6 @@
 - Run `npm install` to install dependencies
 - Start app with `npm start`
 
-- Project Tracker: [Trello Link](https://tinyurl.com/yc6senzx)
+### Project Tracker
+
+[Trello Link](https://tinyurl.com/yc6senzx)
