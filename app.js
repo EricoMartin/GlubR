@@ -1,7 +1,7 @@
 import express from "express";
 import CONFIG from "./config/config";
 import dbConnection from "./db/connection";
-import authRoute from "./routes/auth";
+import router from "./routes";
 
 const port = parseInt(CONFIG.PORT, 10) || 3000;
 
@@ -10,10 +10,10 @@ const app = express();
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
-app.use("/api", authRoute);
+app.use("/api", router);
 
 app.get("/", (req, res) => {
-  res.send("Welcome to Glubr Blog API");
+  res.send("Welcome to GlubR Blog API");
 });
 
 dbConnection();
