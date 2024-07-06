@@ -30,3 +30,15 @@
 - [ ] user can like a post
 - [ ] user can like a comment
 - [x] user can sign out
+
+## Setting up locally
+
+- Clone this repository to your local machine
+- Create an account on MongoDB Atlas or install MongoDB locally
+- Create `.env` file.
+- Use the format in `.env-sample` file to configure the API
+- Add your database credentials in the `.env` file. i.e DATABASE_URL
+- Run `npm install` to install dependencies
+- Start app with `npm start`
+
+- Project Tracker: [Trello Link](https://tinyurl.com/yc6senzx)
