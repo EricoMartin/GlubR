@@ -9,7 +9,7 @@ const glubSchema = new mongoose.Schema(
       ref: "User",
       required: true,
     },
-    //   comments: [{ type: mongoose.Schema.Types.ObjectId, ref: "Comment" }],
+    comments: [{ type: mongoose.Schema.Types.ObjectId, ref: "Comment" }],
     likes: { type: mongoose.Schema.Types.Number, default: 0 },
     dislikes: { type: mongoose.Schema.Types.Number, default: 0 },
   },
