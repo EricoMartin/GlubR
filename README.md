@@ -6,17 +6,19 @@
 
 ### EndPoints
 
-| Feature | Route             | Http Method |
-| ------- | ----------------- | ----------- |
-| Signup  | /api/auth/signup  | POST        |
-| Login   | /api/auth/login   | POST        |
-| Logout  | /api/auth/logout  | POST        |
-| Create  | /api/glub/post    | POST        |
-| Read    | /api/glub/:glubId | GET         |
-| ReadAll | /api/glub/        | GET         |
-| Update  | /api/glub/:glubId | PUT         |
-| Delete  | /api/glub/:glubId | DELETE      |
-| Comment | /api/comment/     | POST        |
+| Feature | Route                     | Http Method |
+| ------- | ------------------------- | ----------- |
+| Signup  | /api/auth/signup          | POST        |
+| Login   | /api/auth/login           | POST        |
+| Logout  | /api/auth/logout          | POST        |
+| Create  | /api/glub/post            | POST        |
+| Read    | /api/glub/:glubId         | GET         |
+| ReadAll | /api/glub/                | GET         |
+| Update  | /api/glub/:glubId         | PUT         |
+| Delete  | /api/glub/:glubId         | DELETE      |
+| Comment | /api/comment/             | POST        |
+| Like    | /api/glub/:glubId/like    | POST        |
+| Unlike  | /api/glub/:glubId/dislike | POST        |
 
 ### User stories
 
@@ -28,8 +30,8 @@
 - [x] user can edit a post
 - [x] user can delete a post
 - [x] user can comment on a post
-- [ ] user can like a post
-- [ ] user can like a comment
+- [x] user can like a post
+- [x] user can unlike a post
 - [x] user can sign out
 
 ## Setting up locally
