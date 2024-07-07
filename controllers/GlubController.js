@@ -4,12 +4,11 @@ import User from "../models/user";
 
 class GlubController {
   static async glubPost(req, res) {
-    console.log("POST /users endpoint hit");
     const { title, body, author } = req.body;
     try {
-      // if (!req.user) {
-      //   throw new Error("User details not found");
-      // }
+      if (!req.user) {
+        throw new Error("User details not found");
+      }
       const glubExist = await Glub.findOne({
         title: req.body.title,
       });
@@ -23,8 +22,7 @@ class GlubController {
         title: title,
         body: body,
         author: author,
-        likes: 0,
-        dislikes: 0,
+        likes: req.body.likes,
       });
       const data = await glub.save();
       res.status(201).send(data);
@@ -77,8 +75,7 @@ class GlubController {
               _id: 1,
               body: 1,
             },
-            likes: 1,
-            dislikes: 1,
+            likes: [],
           },
         },
       ]);
@@ -104,8 +101,6 @@ class GlubController {
       );
       //check if post belongs to the user initiatin the request
       if (post.author.toString() !== req.user._id.toString()) {
-        console.log(`Author Id: ${post.author.toString()}`);
-        console.log(`User Id: ${req.user._id}`);
         return res.status(401).json({
           status: "Fail",
           message: `You can only update a post you created!`,
@@ -180,11 +175,6 @@ class GlubController {
         });
       }
 
-      // //delete post from 'posts' array in user the document
-      // const postByUser = await User.findById(req.user._id);
-      // postByUser.posts.pull(post._id);
-      // await postByUser.updateOne({ posts: postByUser.posts });
-
       //return deleted post
       res.status(200).json({
         status: "success",
@@ -192,6 +182,81 @@ class GlubController {
       });
     } catch (err) {
       throw err;
+    }
+  }
+
+  static async postLike(req, res) {
+    try {
+      const { glubId } = req.params;
+      const userId = req.user._id;
+
+      if (!mongoose.Types.ObjectId.isValid(glubId)) {
+        return res.status(400).json({
+          status: "error",
+          message: "Invalid post ID format",
+        });
+      }
+      const post = await Glub.findByIdAndUpdate(
+        glubId,
+        {
+          $set: { likes: userId },
+        },
+        { new: true }
+      );
+
+      if (!post) {
+        return res.status(404).json({
+          status: "error",
+          message: "Post not found",
+        });
+      }
+      res.status(200).json({
+        status: "success",
+        post,
+      });
+    } catch (err) {
+      res.status(500).json({
+        status: "error",
+        message: err.message,
+      });
+    }
+  }
+
+  static async postDislike(req, res) {
+    try {
+      const { glubId } = req.params;
+      const userId = req.user._id;
+
+      if (!mongoose.Types.ObjectId.isValid(glubId)) {
+        return res.status(400).json({
+          status: "error",
+          message: "Invalid post ID format",
+        });
+      }
+
+      const post = await Glub.findByIdAndUpdate(
+        glubId,
+        {
+          $pull: { likes: userId },
+        },
+        { new: true }
+      );
+
+      if (!post) {
+        return res.status(404).json({
+          status: "error",
+          message: "Post not found",
+        });
+      }
+      res.status(200).json({
+        status: "success",
+        post,
+      });
+    } catch (err) {
+      res.status(500).json({
+        status: "error",
+        message: err.message,
+      });
     }
   }
 }

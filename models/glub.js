@@ -10,8 +10,7 @@ const glubSchema = new mongoose.Schema(
       required: true,
     },
     comments: [{ type: mongoose.Schema.Types.ObjectId, ref: "Comment" }],
-    likes: { type: mongoose.Schema.Types.Number, default: 0 },
-    dislikes: { type: mongoose.Schema.Types.Number, default: 0 },
+    likes: [{ type: mongoose.Schema.Types.ObjectId, ref: "User" }],
   },
   { toJSON: { virtuals: true }, toObject: { virtuals: true }, timestamps: true }
 );
