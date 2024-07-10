@@ -4,6 +4,9 @@
 
 **GlubR** is a cutting-edge blog platform API designed to empower developers to create a system for bloggers and creatives to engage their defined audiences while streamlining content management. Users can create, read, update and delete blog posts using the API endpoints.
 
+### Documentation
+[Postman](https://documenter.getpostman.com/view/8682164/2sA3e49UNQ)
+
 ### EndPoints
 
 | Feature | Route                     | Http Method |

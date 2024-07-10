@@ -12,7 +12,7 @@ class GlubController {
       const glubExist = await Glub.findOne({
         title: req.body.title,
       });
-      if (glubExist) res.status(400).send("Article already exists");
+      if (glubExist) return res.status(400).send("Article already exists");
 
       if (!title && !body && !author) {
         res.status(400).send({ message: "One or more fields are missing!" });
@@ -74,8 +74,9 @@ class GlubController {
             comments: {
               _id: 1,
               body: 1,
+              author: 1,
             },
-            likes: [],
+            likes: likes,
           },
         },
       ]);
@@ -90,7 +91,8 @@ class GlubController {
     }
   }
   static async updateGlub(req, res) {
-    const { title, body, author } = req.body;
+    const { title, body} = req.body;
+
     try {
       const post = await Glub.findByIdAndUpdate(
         req.params.glubId,
@@ -158,6 +160,7 @@ class GlubController {
   }
 
   static async deleteGlub(req, res) {
+    
     try {
       const post = await Glub.findByIdAndDelete(req.params.glubId, {
         author: req.user._id,
@@ -199,7 +202,7 @@ class GlubController {
       const post = await Glub.findByIdAndUpdate(
         glubId,
         {
-          $set: { likes: userId },
+          $addToSet: { likes: [userId] },
         },
         { new: true }
       );
